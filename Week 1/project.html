@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Intern Onboarding Portal - SCR</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9;">
+
+    <table width="100%" border="0" style="background-color: white; border: 1px solid #ccc; padding: 20px;">
+        <tr>
+            <td align="center">
+                <h2>South Central Railway WWO - Vijayawada Division</h2>
+                <h3>Intern Registration Form</h3>
+                <hr width="80%">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!-- Realistic Project Form -->
+                <form action="/submit_registration" method="POST">
+                    
+                    <fieldset style="margin-bottom: 20px;">
+                        <legend><strong>Personal Information</strong></legend>
+                        <table cellpadding="8">
+                            <tr>
+                                <td><label for="fname">Full Name:</label></td>
+                                <td><input type="text" id="fname" name="fname" required size="40"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="dob">Date of Birth:</label></td>
+                                <td><input type="date" id="dob" name="dob"></td>
+                            </tr>
+                            <tr>
+                                <td>Gender:</td>
+                                <td>
+                                    <input type="radio" name="gender" value="male" id="g_male"> <label for="g_male">Male</label>
+                                    <input type="radio" name="gender" value="female" id="g_female"> <label for="g_female">Female</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+
+                    <fieldset style="margin-bottom: 20px;">
+                        <legend><strong>Internship Details</strong></legend>
+                        <table cellpadding="8">
+                            <tr>
+                                <td><label for="dept">Department:</label></td>
+                                <td>
+                                    <select id="dept" name="dept">
+                                        <option value="it">Information Technology(CSE)</option>
+                                        <option value="electrical">Electrical Loco Shed(ECE/MECH/CIVIL)</option>
+                                        <option value="operations">Operations & Management(ECE)</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top">Skills (Check all that apply):</td>
+                                <td>
+                                    <input type="checkbox" name="skills" value="web"> Web Development<br>
+                                    <input type="checkbox" name="skills" value="db"> Database Management (JDBC)<br>
+                                    <input type="checkbox" name="skills" value="networking"> Networking
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+
+                    <fieldset style="margin-bottom: 20px;">
+                        <legend><strong>Documentation</strong></legend>
+                        <table cellpadding="8">
+                            <tr>
+                                <td><label for="resume">Upload Resume (PDF):</label></td>
+                                <td><input type="file" id="resume" name="resume" accept=".pdf"></td>
+                            </tr>
+                            <tr>
+                                <td valign="top"><label for="cover_letter">Statement of Purpose:</label></td>
+                                <td><textarea id="cover_letter" name="cover_letter" rows="5" cols="50"></textarea></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+
+                    <div style="text-align: center; margin-top: 20px;">
+                        <input type="hidden" name="form_id" value="intern_reg_2026">
+                        <input type="submit" value="Submit Registration" style="padding: 10px 20px; font-weight: bold;">
+                        <input type="reset" value="Clear Form" style="padding: 10px 20px;">
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

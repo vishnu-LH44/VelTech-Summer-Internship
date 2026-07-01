@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Practice</title>
+</head>
+<body>
+    <h1>Week 1: HTML Practice</h1>
+    <hr>
+
+    <!-- TOPIC 1: Text Formatting -->
+    <h2>Topic 1: Text Formatting & Layout</h2>
+    
+    <h3>1. Basic Formatting</h3>
+    <p>This is a standard paragraph. Below are formatting examples:</p>
+    <p>This text is <b>bold</b>, this is <i>italic</i>, and this is <strong>strongly emphasized</strong>.</p>
+    <p>Water is H<sub>2</sub>O and E=mc<sup>2</sup> (Subscript and Superscript).</p>
+
+    <h3>2. Preformatted Text</h3>
+    <pre>
+        function helloWorld() {
+            console.log("Preserves whitespace and line breaks");
+        }
+    </pre>
+
+    <hr>
+
+    <!-- TOPIC 2: Links & Media -->
+    <h2>Topic 2: Links and Media</h2>
+    
+    <h3>1. Hyperlinks</h3>
+    <p><a href="https://indianrailways.gov.in" target="_blank">External Link: Indian Railways</a></p>
+    <p><a href="#bottom">Internal Link: Jump to bottom of page</a></p>
+
+    <h3>2. Image Embedding</h3>
+    <!-- Using a placeholder image for practice -->
+    <img src="cat.png"
+         alt="Cute Cat"
+         width="300"
+         height="300">
+
+    <br><br>
+
+    <hr>
+
+    <!-- TOPIC 3: Lists & Tables -->
+    <h2>Topic 3: Lists & Tables</h2>
+    <h2>Lists:</h2>
+    <h3>1. Unordered Lists</h3>
+    <ul style = "list-style-type : circle;">
+	<li>Coffee</li>
+	<li>Tea</li>
+    </ul>
+    
+    <ul style = "list-style-type : square;">
+	<li>Dosa</li>
+	<li>Idly</li>
+    </ul>
+
+    <ul>
+        <li>HTML (HyperText Markup Language)</li>
+        <li>CSS (Cascading Style Sheets)</li>
+    </ul>
+    <h3>2. Nested List</h2>
+
+    <ul>
+        <li>Frontend
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </li>
+
+        <li>Backend
+            <ul>
+                <li>Java</li>
+                <li>Python</li>
+                <li>PHP</li>
+            </ul>
+        </li>
+
+        <li>Database
+            <ul>
+                <li>MySQL</li>
+                <li>MongoDB</li>
+            </ul>
+        </li>
+    </ul>
+    <h3>3. Ordered Lists</h3>	
+    <ol>
+        <li>Start local server</li>
+        <li>Open browser</li>
+        <li>Test application</li>
+    </ol>
+    <h4>Start Attribute</h4>
+    <ol start = "50">
+        <li>Start local server</li>
+        <li>Open browser</li>
+        <li>Test application</li>
+    </ol>
+    <ol Type = "I" start = "50">
+        <li>Start local server</li>
+        <li>Open browser</li>
+        <li>Test application</li>
+    </ol>
+
+
+    <h3>4. Definition Lists</h3>
+    <dl>
+        <dt>HTML</dt>
+        <dd>Structural blueprint of a webpage.</dd>
+        <dt>CSS</dt>
+        <dd>Styling and layout language.</dd>
+    </dl>
+<h2>Tables:</h2>
+    <h3>1. Basic Table</h3>
+    <table style = "width:75%">
+    <tr>
+	<th>First Name</th>
+	<th>Last Name</th>
+	<th>Age</th>
+    </tr>
+    <tr>
+	<td>Jill</td>
+	<td>Smith</td>
+	<td>18</td>
+    </tr>
+    <tr>
+	<td>Eve</td>
+	<td>Jackson</td>
+	<td>38</td>
+    </tr>
+    </table>
+    <br>
+<h3>2. Bordered Table</h3>
+<style>
+.greenTable,
+.greenTable th,
+.greenTable td{
+    border:2px solid green;
+    border-collapse:collapse;
+}
+
+.greenTable th,
+.greenTable td{
+    padding:25px;
+    text-align:left;
+}
+</style>
+
+<table class="greenTable" style="width:75%">
+    <tr>
+        <th>Month</th>
+        <th>Savings</th>
+        
+    </tr>
+    <tr>
+        <td>January</td>
+        <td>1000</td>
+        
+    </tr>
+    <tr>
+        <td>February</td>
+        <td>5000</td>
+        
+    </tr>
+</table>
+<h3>3. Table with Border Spacing</h3>
+
+<style>
+    table.spaceTable,
+    table.spaceTable th,
+    table.spaceTable td {
+        border: 2px solid black;
+        padding: 10px;
+    }
+
+    table.spaceTable {
+        border-spacing: 20px;
+    }
+</style>
+
+<table class="spaceTable" style="width:75%">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+    </tr>
+
+    <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>18</td>
+    </tr>
+
+    <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>38</td>
+    </tr>
+</table>
+
+<br>
+<h3>4. Colspan</h3>
+<style>
+table,th,td{border: 1px solid black;border-collapse:collapse;}th,td{padding:15px;text-align:left;}</style>
+<table style = "width:100%">
+<tr>
+<th>Name</th>
+<th colspan = "2">Telephone</th>
+</tr>
+<tr>
+<td>Bill Gates</td>
+<td>5554443332</td>
+<td>7776665554</td>
+</tr>
+</table>
+<br>
+<h3>5. Rowspan</h3>
+<style>
+table,th,td{border: 1px solid black;border-collapse:collapse;}th,td{padding:15px;text-align:left;}</style>
+<table style = "width:100%">
+<tr>
+<th>Name</th>
+<td>Bill Gates</td>
+</tr>
+<tr>
+<th rowspan = "2">Telephone</th>
+<td>5554443332</td>
+</tr>
+<tr>
+<td>7776665554</td>
+</tr>
+</table>
+<br>
+
+    <h3>6. Table Rowspan & Colspan</h3>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th colspan="3">Employee Schedule </th>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <th>Shift</th>
+            <th>Location</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Sumanth</td>
+            <td>Morning</td>
+            <td>Vijayawada Station</td>
+        </tr>
+        <tr>
+            <td>Evening</td>
+            <td>Head Office</td>
+        </tr>
+    </table>
+<br>
+
+<style>
+#to1{
+    width:100%;
+}
+
+#to1, #to1 th, #to1 td{
+    border:5px solid black;
+    border-collapse:collapse;
+}
+
+#to1 th, #to1 td{
+    padding:15px;
+    text-align:center;
+}
+
+#to1 tr:nth-child(even){
+    background-color:yellow;
+}
+
+#to1 tr:nth-child(odd){
+    background-color:green;
+}
+
+#to1 th{
+    background-color:red;
+    color:white;
+}
+</style>
+<h3>7. Styling Tables<h3>
+<table id="to1">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+    </tr>
+
+    <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>18</td>
+    </tr>
+
+    <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>38</td>
+    </tr>
+
+    <tr>
+        <td>Andrew</td>
+        <td>Smith</td>
+        <td>38</td>
+    </tr>
+</table>
+    <hr>
+
+<!-- TOPIC 4: Forms -->
+    <h2>Topic 4: Forms</h2>
+    <!-- Form 1 -->
+<h3>1. Radio Buttons</h3>
+<form>
+  <input type="radio" id="html" name="fav_language">
+  <label for="html">HTML</label><br>
+  <input type="radio" id="css" name="fav_language">
+  <label for="css">CSS</label><br>
+  <input type="radio" id="javascript" name="fav_language">
+  <label for="javascript">JavaScript</label>
+</form>
+
+<!-- Form 2 -->
+<h3>2. Checkboxes</h3>
+<form>
+  <input type="checkbox" id="vehicle1">
+  <label for="vehicle1">I have a bike</label><br>
+  <input type="checkbox" id="vehicle2">
+  <label for="vehicle2">I have a car</label><br>
+  <input type="checkbox" id="vehicle3">
+  <label for="vehicle3">I have a boat</label>
+</form>
+
+<!-- Form 3 -->
+<h3>3. Basic Form</h3>
+<form>
+  <label>First name:</label><br>
+  <input type="text"><br>
+  <label>Last name:</label><br>
+  <input type="text"><br><br>
+  <input type="submit">
+</form>
+
+<!-- Form 4 -->
+<h3>4. Input Element</h3>
+<form>
+  <label>Username:</label>
+  <input type="text">
+</form>
+
+<!-- Form 5 -->
+<h3>5. Select Dropdown</h3>
+<form>
+  <label>Choose a car:</label>
+  <select>
+    <option>Volvo</option>
+    <option>Saab</option>
+    <option>Fiat</option>
+    <option>Audi</option>
+  </select>
+</form>
+
+<!-- Form 6 -->
+<h3>6. Preselected Option</h3>
+<form>
+  <select>
+    <option>Volvo</option>
+    <option selected>Saab</option>
+    <option>Fiat</option>
+    <option>Audi</option>
+  </select>
+</form>
+
+<!-- Form 7 -->
+<h3>7. Visible Options</h3>
+<form>
+  <select size="3">
+    <option>Volvo</option>
+    <option>Saab</option>
+    <option>Fiat</option>
+    <option>Audi</option>
+  </select>
+</form>
+
+<!-- Form 8 -->
+<h3>8. Multiple Select</h3>
+<form>
+  <select multiple>
+    <option>Volvo</option>
+    <option>Saab</option>
+    <option>Fiat</option>
+    <option>Audi</option>
+  </select>
+</form>
+
+<!-- Form 9 -->
+<h3>9. Textarea</h3>
+<form>
+  <textarea rows="4" cols="50">
+Write something here...
+  </textarea>
+</form>
+
+<!-- Form 10 -->
+<h3>10. Styled Textarea</h3>
+<form>
+  <textarea style="width:300px; height:120px;">
+Write something here...
+  </textarea>
+</form>
+
+<!-- Form 11 -->
+<h3>11. Button</h3>
+<button type="button" onclick="alert('Hello!')">Click Me!</button>
+
+<!-- Form 12 -->
+<h3>12. Datalist</h3>
+<form>
+  <input list="browsers" name="browser">
+  <datalist id="browsers">
+    <option value="Chrome">
+    <option value="Firefox">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+</form>
+
+<!-- Form 13 -->
+<h3>13. Output</h3>
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  <input type="range" id="a" value="50">
+  +
+  <input type="number" id="b" value="50">
+  =
+  <output name="x"></output>
+</form>
+
+<!-- Form 14 -->
+<h3>14. Form Target</h3>
+<form target="_blank">
+  <label>First name:</label><br>
+  <input type="text"><br>
+  <label>Last name:</label><br>
+  <input type="text"><br><br>
+  <input type="submit">
+</form>
+
+<!-- Form 15 -->
+<h3>15. Input Button</h3>
+<input type="button" value="Click Me">
+
+<!-- Form 16 -->
+<h3>16.  Color Picker</h3>
+<form>
+  Select your favorite color:
+  <input type="color">
+</form>
+
+<!-- Form 17 -->
+<h3>17.  Date</h3>
+<input type="date">
+
+<!-- Form 18 -->
+<h3>18.  DateTime Local</h3>
+<input type="datetime-local">
+
+<!-- Form 19 -->
+<h3>19.  Fieldset</h3>
+<form>
+  <fieldset>
+    <legend>Personal Info</legend>
+    First name:<br>
+    <input type="text"><br>
+    Last name:<br>
+    <input type="text">
+  </fieldset>
+</form>
+
+<!-- Form 20 -->
+<h3>20. Email</h3>
+<input type="email" placeholder="Enter email">
+
+<!-- Form 21 -->
+<h3>21. Image Submit</h3>
+<form>
+  First name:<br>
+  <input type="text"><br>
+  Last name:<br>
+  <input type="text"><br><br>
+  <input type="submit">
+</form>
+
+<!-- Form 22 -->
+<h3>22. File Upload</h3>
+<input type="file">
+
+<!-- Form  24 -->
+<h3>24. Hidden Field</h3>
+<form>
+  First name:
+  <input type="text"><br>
+  <input type="hidden" value="hiddenValue">
+</form>
+
+<!-- Form  25 -->
+<h3>25. Month</h3>
+<input type="month">
+
+<!-- Form  26 -->
+<h3>26. Number</h3>
+<input type="number" min="1" max="10">
+ <!-- Form 27 -->
+<h3>27.  Telephone</h3>
+<input type="tel" placeholder="123-456-7890">
+
+<!-- Form 28 -->
+<h3>28.  Time</h3>
+<input type="time">
+
+<!-- Form 29 -->
+<h3>29.  Timetable</h3>
+<H1><FONT COLOR="DARKCYAN"><CENTER>COLLEGE TIME TABLE</FONT></H1>
+<table border="2" cellspacing="3" align="center">
+<tr>
+ <td align="center">
+ <td>8:30-9:30
+ <td>9:30-10:30
+ <td>10:3-11:30
+ <td>11:30-12:30
+ <td>12:30-2:00
+ <td>2:00-3:00
+ <td>3:00-4:00
+ <td>4:00-5:00
+</tr>
+<tr>
+ <td align="center">MONDAY
+ <td align="center">---<td align="center"><font color="blue">SUB1<br>
+ <td align="center"><font color="pink">SUB2<br>
+ <td align="center"><font color="red">SUB3<br>
+ <td rowspan="6"align="center">L<br>U<br>N<br>C<br>H
+ <td align="center"><font color="maroon">SUB4<br>
+ <td align="center"><font color="brown">SUB5<br>
+ <td align="center">counselling class
+</tr>
+<tr>
+ <td align="center">TUESDAY
+ <td align="center"><font color="blue">SUB1<br>
+ <td align="center"><font color="red">SUB2<br>
+ <td align="center"><font color="pink">SUB3<br>
+ <td align="center">---
+ <td align="center"><font color="orange">SUB4<BR>
+ <td align="center"><font color="maroon">SUB5<br>
+ <td align="center">library
+</tr>
+<tr>
+ <td align="center">WEDNESDAY
+ <td align="center"><font color="pink">SUB1<br>
+ <td align="center"><font color="orange">SUB2<BR>
+ <td align="center"><font color="brown">SWA<br>
+ <td align="center">---
+ <td colspan="3" align="center"><font color="green"> lab
+</tr>
+<tr>
+ <td align="center">THURSDAY
+ <td align="center">SUB1<br>
+ <td align="center"><font color="brown">SUB2<br>
+ <td align="center"><font color="orange">SUB3<BR>
+ <td align="center">---
+ <td align="center"><font color="blue">SUB4<br>
+ <td align="center"><font color="red">SUB5<br>
+ <td align="center">library
+</tr>
+<tr>
+ <td align="center">FRIDAY
+ <td align="center"><font color="orange">SUB1<BR>
+ <td align="center"><font color="maroon">SUB2<br>
+ <td align="center"><font color="blue">SUB3<br>
+ <td align="center">---
+ <td align="center"><font color="pink">SUB4<br>
+ <td align="center"><font color="brown">SUB5<br>
+ <td align="center">library
+</tr>
+<tr>
+ <td align="center">SATURDAY
+ <td align="center"><font color="red">SUB1<br>
+ <td colspan="3" align="center">seminar
+ <td align="center"><font color="pink">SUB4<br>
+ <td align="center"><font color="brown">SUB5<br>
+ <td align="center">library
+</tr>
+
+</table>
+
+<!-- Form 50 -->
+<h3>Form 50: Multiple File Upload</h3>
+<input type="file" multiple>
+
+<!-- Form 60 -->
+<h3>Form 60: Novalidate Form</h3>
+<form novalidate>
+  E-mail:
+  <input type="email">
+  <input type="submit">
+</form>
+<!-- TOPIC 5: Graphics -->
+<hr>
+<h2>Topic 5: HTML5 Graphics</h2>
+
+<style>
+#graphics-gallery{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:flex-start;
+}
+
+.graphics-card{
+    width:420px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    padding:15px;
+    background:#fff;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+.graphics-card h4{
+    margin:0 0 15px;
+    text-align:center;
+    color:#0066cc;
+}
+
+.graphics-card canvas,
+.graphics-card img{
+    max-width:100%;
+}
+</style>
+
+<div id="graphics-gallery">
+
+    <!-- Graphics 1 -->
+    <div class="graphics-card">
+        <h4>graphics1.html</h4>
+
+        <canvas id="canvas1" width="350" height="250" style="border:2px solid #d3d3d3;"></canvas>
+
+        <script>
+        var c=document.getElementById("canvas1");
+        var ctx=c.getContext("2d");
+        ctx.moveTo(50,30);
+        ctx.lineTo(300,200);
+        ctx.stroke();
+        </script>
+    </div>
+
+    <!-- Graphics 2 -->
+    <div class="graphics-card">
+        <h4>graphics2.html</h4>
+
+        <canvas id="canvas2" width="350" height="250" style="border:2px solid #d3d3d3;"></canvas>
+
+        <script>
+        var c=document.getElementById("canvas2");
+        var ctx=c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(170,120,60,0,2*Math.PI);
+        ctx.stroke();
+        </script>
+    </div>
+
+    <!-- Graphics 3 -->
+    <div class="graphics-card">
+        <h4>graphics3.html</h4>
+
+        <canvas id="canvas3" width="350" height="200" style="border:2px solid #d3d3d3;"></canvas>
+
+        <script>
+        var c=document.getElementById("canvas3");
+        var ctx=c.getContext("2d");
+        ctx.font="40px Arial";
+        ctx.fillText("SCRWWO",70,100);
+        </script>
+    </div>
+
+    <!-- Graphics 4 -->
+    <div class="graphics-card">
+        <h4>graphics4.html</h4>
+
+        <canvas id="canvas4" width="350" height="150" style="border:2px solid #d3d3d3;"></canvas>
+
+        <script>
+        var c=document.getElementById("canvas4");
+        var ctx=c.getContext("2d");
+        ctx.font="30px Arial";
+        ctx.fillText("Hello World",50,80);
+        </script>
+    </div>
+
+    <!-- Graphics 5 -->
+    <div class="graphics-card">
+        <h4>graphics5.html</h4>
+
+        <canvas id="canvas5" width="350" height="150" style="border:2px solid #d3d3d3;"></canvas>
+
+        <script>
+        var c=document.getElementById("canvas5");
+        var ctx=c.getContext("2d");
+        ctx.font="30px Arial";
+        ctx.strokeText("Hello World",40,80);
+        </script>
+    </div>
+
+    <!-- Graphics 6 -->
+    <div class="graphics-card">
+        <h4>graphics6.html</h4>
+
+        <canvas id="canvas6" width="350" height="150" style="border:2px solid #d3d3d3;"></canvas>
+
+        <script>
+        var c=document.getElementById("canvas6");
+        var ctx=c.getContext("2d");
+
+        var grd=ctx.createLinearGradient(0,0,350,0);
+        grd.addColorStop(0,"red");
+        grd.addColorStop(1,"white");
+
+        ctx.fillStyle=grd;
+        ctx.fillRect(20,20,300,100);
+        </script>
+    </div>
+
+    <!-- Graphics 7 -->
+    <div class="graphics-card">
+        <h4>graphics7.html</h4>
+
+        <canvas id="canvas7" width="350" height="150" style="border:2px solid #d3d3d3;"></canvas>
+
+        <script>
+        var c=document.getElementById("canvas7");
+        var ctx=c.getContext("2d");
+
+        var grd=ctx.createRadialGradient(150,75,10,150,75,90);
+        grd.addColorStop(0,"red");
+        grd.addColorStop(1,"white");
+
+        ctx.fillStyle=grd;
+        ctx.fillRect(20,20,300,100);
+        </script>
+    </div>
+
+    <!-- Graphics 8 -->
+    <div class="graphics-card">
+        <h4>graphics8.html</h4>
+
+        <img id="cat" src="cat.png" width="200" alt="Image">
+
+        <br><br>
+
+        <canvas id="canvas8" width="250" height="300" style="border:2px solid #d3d3d3;"></canvas>
+
+        <br><br>
+
+        <button onclick="drawImageCanvas()">Draw Image</button>
+
+        <script>
+        function drawImageCanvas(){
+            var c=document.getElementById("canvas8");
+            var ctx=c.getContext("2d");
+            var img=document.getElementById("cat");
+            ctx.drawImage(img,10,10);
+        }
+        </script>
+    </div>
+
+</div>
+    <hr>
+<hr>
+
+<!-- TOPIC 6: HTML Iframes -->
+<h2>Topic 6: HTML Iframes</h2>
+
+<h3>1. Basic Iframe (Height & Width)</h3>
+<p>You can use height and width attributes to specify iframe size.</p>
+<iframe src="https://www.wikipedia.org" height="200" width="300" title="Iframe Example"></iframe>
+
+<br><br>
+
+<h3>2. Iframe using CSS</h3>
+<p>You can also use CSS properties to style iframe.</p>
+<iframe src="https://www.example.com"
+        style="height:200px; width:300px;"
+        title="Iframe Example">
+</iframe>
+
+<br><br>
+
+<h3>3. Remove Iframe Border</h3>
+<p>Use border:none to remove iframe border.</p>
+<iframe src="https://www.example.com"
+        style="border:none; height:200px; width:300px;"
+        title="Iframe Example">
+</iframe>
+
+<br><br>
+
+<h3>4. Iframe as Link Target</h3>
+<iframe src="" name="iframe_a" height="300px" width="100%" title="Iframe Example"></iframe>
+
+<p>
+    <a href="https://www.indianrailways.gov.in" target="iframe_a">
+        Open Indian Railways in iframe
+    </a>
+</p>
+    <!-- ADDITIONAL PRACTICES FROM WORKSPACE (INLINE IFRAMES) -->
+    <h2>Additional Examples </h2>
+        
+    
+
+
+
+    </div>
+    <div style="border: 1px solid #ccc; padding: 10px; background-color: #fff;">
+        <h4 style="margin: 0 0 10px 0;">emojis.html</h4>
+        <div>
+Emoji	Value	
+🗻	&#128507;	
+🗼	&#128508;	
+🗽	&#128509;	
+🗾	&#128510;	
+🗿	&#128511;	
+😀	&#128512;	
+😁	&#128513;	
+😂	&#128514;	
+😃	&#128515;	
+😄	&#128516;	
+😅	&#128517;
+</div>
+    </div>
+    <div style="border: 1px solid #ccc; padding: 10px; background-color: #fff;">
+        <h4 style="margin: 0 0 10px 0;">input.html</h4>
+        <div>
+<center> <h1> Student Login Form </h1> </center> 
+    <form>
+        <div class="container"> 
+            <label>Username : </label> 
+            <input type="text" placeholder="Enter Username" name="username" required>
+            <label>Password : </label> 
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <button type="submit">Login</button> 
+            <input type="checkbox" checked="checked"> Remember me 
+            <button type="button" class="cancelbtn"> Cancel</button> 
+            Forgot <a href="#"> password? </a> 
+        </div> 
+    </form>
+</div>
+    </div>
+</div>
+
+    <hr>
+    <p id="bottom">Bottom of the page.</p>
+</body>
+</html>
