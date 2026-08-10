@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice </title>
+    <style>
+        /* --- Designed by CSE Intern --- */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0;
+            background-color: #f0f4f8; 
+            color: #222222;
+        }
+
+        /* Cool Gradient Top Banner */
+        .top-banner {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            width: 100%;
+        }
+
+        /* Main Workspace Card Wrapper */
+        .container {
+            max-width: 950px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 45px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e1e8ed;
+        }
+
+        /* Accent Underlined Main Header */
+        h1.main-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1a2a6c;
+            text-decoration: underline;
+            text-underline-offset: 8px;
+            margin-bottom: 50px;
+        }
+
+        /* Groupings Layout Blocks */
+        .section-group {
+            margin-bottom: 45px;
+        }
+
+        .section-group-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            font-weight: 700;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 6px;
+            margin-bottom: 25px;
+        }
+
+        /* Left-border Framed Box Components */
+        .practice-box { 
+            border-left: 4px solid #3498db;
+            padding: 5px 0 5px 20px; 
+            margin-bottom: 35px; 
+            transition: border-color 0.2s;
+        }
+        .practice-box:hover {
+            border-left-color: #1e3c72; 
+        }
+
+        .practice-box h2 {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin: 0 0 12px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .practice-box p {
+            margin: 0 0 15px 0;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* --- Stylish Interactive Elements --- */
+        button {
+            padding: 9px 18px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid #3498db;
+            border-radius: 6px;
+            background-color: #ffffff;
+            color: #3498db;
+            transition: all 0.2s ease;
+            margin-right: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        button:hover {
+            background-color: #3498db;
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        input[type="text"], select {
+            padding: 9px 14px;
+            font-size: 0.95rem;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            margin-right: 8px;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus, select:focus {
+            border-color: #1e3c72;
+            outline: none;
+        }
+
+        .hex-red-text {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .rgb-box-text {
+            background-color: #eaf2f8;
+            padding: 12px 18px;
+            color: #2980b9;
+            display: inline-block;
+            border-radius: 6px;
+            width: 95%;
+            border-left: 3px solid #2980b9;
+        }
+
+        .highlight { 
+            background-color: #f1c40f; 
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="container">
+        
+        <h1 class="main-title">JS Practice</h1>
+        <!-- ==========================================
+             PART 1: SELECTORS, COLORS & BACKGROUNDS (ORDER CHANGED)
+             ========================================== -->
+        <div class="section-group">
+            <div class="section-group-title">Selectors, Colors & Backgrounds</div>
+
+            <div class="practice-box">
+                <h2>DISPLAY DATE AND TIME</h2>
+                <p id="dateDemo" class="hex-red-text">This paragraph uses an #id selector and a Hex color (#e74c3c).</p>
+                <button type="button" onclick="document.getElementById('dateDemo').innerHTML = Date()">Display Current Runtime Stamp</button>
+            </div>
+
+            <div class="practice-box">
+                <h2>Changing Content & RGB Background</h2>
+                <div class="rgb-box-text">
+                    <p id="contentDemo" style="margin:0; color: inherit;">This paragraph uses a .class selector and an RGB color variant structure background.</p>
+                </div>
+                <div style="margin-top: 12px;">
+                    <button type="button" onclick="document.getElementById('contentDemo').innerHTML = 'Hello JavaScript Layout Applied!'">Modify Content Text</button>
+                </div>
+            </div>
+
+            <div class="practice-box">
+                <h2>Dynamic Attributes (Image Alteration)</h2>
+                <p>Modifying attributes dynamically using structural identity nodes.</p>
+                <img id="myImage" src="bulb2.jpg" alt="Status Bulb Node" style="width:75px; height:75px; background-color:#f4f4f4; display:block; margin-bottom:12px; border-radius:6px; border: 1px solid #ddd;">
+                <button onclick="document.getElementById('myImage').src='bulb1.jpg'">Turn Light On</button>
+                <button onclick="document.getElementById('myImage').src='bulb2.jpg'">Turn Light Off</button>
+            </div>
+
+            <div class="practice-box">
+                <h2>Inline Style Mutation</h2>
+                <p id="styleDemo">JavaScript can target CSS properties directly inline.</p>
+                <button type="button" onclick="document.getElementById('styleDemo').style.fontSize='30px'">Scale Size Up</button>
+            </div>
+
+            <div class="practice-box">
+                <h2>Visibility Elements Manipulation</h2>
+                <p id="visibilityDemo">Hide or reveal markup document flows effortlessly.</p>
+                <button type="button" onclick="document.getElementById('visibilityDemo').style.display='none'">Hide Target Block</button>
+                <button type="button" onclick="document.getElementById('visibilityDemo').style.display='block'">Show Target Block</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             PART 2: GROUPING & DESCENDANT SELECTORS (ORDER CHANGED)
+             ========================================== -->
+        <div class="section-group">
+            <div class="section-group-title">Grouping & Descendant Selectors</div>
+
+            <div class="practice-box">
+                <h2>DOM Custom Action Nodes</h2>
+                <p id="text-target" style="color: #6a1b9a; font-weight: bold;">Heading inside grouping demo style context.</p>
+                <button onclick="changeText()">Execute Text Change</button>
+                <button onclick="resetText()">Reset Block</button>
+            </div>
+
+            <div class="practice-box">
+                <h2>Dynamic Stylesheets Toggling</h2>
+                <p id="style-target">Span markup item inside grouping functional demo target tracking row.</p>
+                <button onclick="highlightText()">Apply Highlight Background</button>
+                <button onclick="removeHighlight()">Remove Highlight Style</button>
+            </div>
+
+            <div class="practice-box">
+                <h2>Form Constraint Validation Entries</h2>
+                <form id="practice-form" onsubmit="return validateForm()">
+                    <input type="text" id="num-input" placeholder="Supply a value > 10">
+                    <button type="submit">Verify Input</button>
+                    <p id="error-msg" style="color: #c0392b; display: none; margin-top: 12px; font-weight: bold;">Error: Supply parameters exceeding quantitative metric 10!</p>
+                    <p id="success-msg" style="color: #27ae60; display: none; margin-top: 12px; font-weight: bold;">Success! Values passed parameters constraints securely.</p>
+                </form>
+            </div>
+
+            <div class="practice-box">
+                <h2>Interactive Menu Change Selection</h2>
+                <p id="select-result" style="font-style: italic; color: #7f8c8d; margin-bottom: 12px;">No custom selection parsed into the record view yet.</p>
+                <select id="my-select" onchange="handleSelectChange()">
+                    <option value="none">-- Dropdown Array Index Choices --</option>
+                    <option value="A">Configuration Target Path Alpha (A)</option>
+                    <option value="B">Configuration Target Path Beta (B)</option>
+                </select>
+            </div>
+        </div>
+
+
+
+        <!-- ==========================================
+             PART 3: ADVANCED DATA LOGIC, LOOPS & CORE MATH
+             ========================================== -->
+        <div class="section-group">
+            <div class="section-group-title">Advanced Data Logic & Core Math</div>
+            
+            <!-- String Methods -->
+            <div class="practice-box">
+                <h2>JavaScript String Methods</h2>
+                <input type="text" id="string-input" value="hello world intern" placeholder="Enter text">
+                <button type="button" onclick="transformString()">Convert to Uppercase</button>
+                <p id="string-result" style="margin-top: 12px; font-weight: bold; color: #2c3e50;"></p>
+            </div>
+
+            <!-- Math Object -->
+            <div class="practice-box">
+                <h2>Math Object (Random Number Generator)</h2>
+                <p>Generate a random round integer value between 1 and 100.</p>
+                <button type="button" onclick="generateRandomNumber()">Generate Random Number</button>
+                <p id="math-result" style="margin-top: 12px; font-weight: bold; color: #e67e22; font-size: 1.2rem;"></p>
+            </div>
+
+            <!-- Array Methods Push/Pop -->
+            <div class="practice-box">
+                <h2>Array Processing Methods (Push / Pop)</h2>
+                <p id="array-display" style="color: #34495e; font-weight: bold;">Current Array: ["BMW", "Volvo", "Saab"]</p>
+                <button onclick="pushElement()">Push ("Audi")</button>
+                <button onclick="popElement()">Pop Last Item</button>
+            </div>
+
+            <!-- Exception Handling -->
+            <div class="practice-box">
+                <h2>Exception Handling (Try...Catch)</h2>
+                <p>Attempts to invoke a non-existent function block to test crash handling prevention.</p>
+                <button onclick="testTryCatch()">Run Risky Code Block</button>
+                <p id="catch-result" style="margin-top:12px; font-style: italic; color: #c0392b;"></p>
+            </div>
+
+            <!-- Standard For Loop -->
+            <div class="practice-box">
+                <h2>Standard For Loop (0 to 4)</h2>
+                <p>Iterates progressively up to a set numeric condition limit.</p>
+                <button onclick="runStandardForLoop()">Run Numeric Loop</button>
+                <p id="standard-for-result" style="margin-top:12px; color:#2c3e50; line-height: 1.5;"></p>
+            </div>
+
+            <!-- For Loop Variations -->
+            <div class="practice-box">
+                <h2>For Loop Index Variations (Arrays)</h2>
+                <p>Testing optimization loops: Initialized tracker expressions omitted or multi-assigned declaration styles.</p>
+                <button onclick="runLoopVariation1()">Omitted Init Loop (Start Index 2)</button>
+                <button onclick="runLoopVariation2()">Omitted Step Expression Loop</button>
+                <p id="loop-var-result" style="margin-top:12px; font-weight: bold; color: #34495e;"></p>
+            </div>
+
+            <!-- Variable Scope Lexicals (var vs let) -->
+            <div class="practice-box">
+                <h2>Scope Leakage Evaluation (var vs let)</h2>
+                <p>Compare block-level isolation versus structural variable leakage inside a loop ecosystem.</p>
+                <button onclick="testVarScope()">Execute var Loop Style</button>
+                <button onclick="testLetScope()">Execute let Loop Style</button>
+                <p id="scope-result" style="margin-top:12px; font-weight: bold; color: #16a085;"></p>
+            </div>
+
+            <!-- Array forEach Method -->
+            <div class="practice-box">
+                <h2>Array forEach() Callback Mapping</h2>
+                <p>Triggers individual processing execution elements sequentially on static array numbers.</p>
+                <button onclick="runForEachLoop()">Run forEach Operation</button>
+                <p id="foreach-result" style="margin-top:12px; color: #8e44ad; line-height: 1.5;"></p>
+            </div>
+
+            <!-- For...Of Iterable Loop -->
+            <div class="practice-box">
+                <h2>For...Of Iterable Iterator Loop</h2>
+                <p>Steps directly over character elements of a target string object item.</p>
+                <button onclick="runForOfLoop()">Iterate Through String</button>
+                <p id="forof-result" style="margin-top:12px; letter-spacing: 2px; color: #2980b9; font-weight: bold;"></p>
+            </div>
+
+            <!-- JSON String parsing -->
+            <div class="practice-box">
+                <h2>JSON Object Reconstitution Node</h2>
+                <p>Translates structural raw configuration payload text streams directly into workable data trees.</p>
+                <button onclick="parseJSONDemo()">Compile JSON Records Index</button>
+                <p id="ref-10" style="margin-top:12px; font-weight: bold; color: #27ae60;"></p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         SCRIPT APPLICATION ACTION BINDINGS
+         ========================================== -->
+    <script>
+        let globalCarsArr = ["BMW", "Volvo", "Saab"];
+
+        function changeText() {
+            document.getElementById("text-target").innerHTML = "Modified Data Content Rendered Successfully.";
+        }
+        function resetText() {
+            document.getElementById("text-target").innerHTML = "Heading inside grouping demo style context.";
+        }
+
+        function highlightText() {
+            document.getElementById("style-target").classList.add("highlight");
+        }
+        function removeHighlight() {
+            document.getElementById("style-target").classList.remove("highlight");
+        }
+
+        function validateForm() {
+            const inputVal = document.getElementById("num-input").value;
+            const errorMsg = document.getElementById("error-msg");
+            const successMsg = document.getElementById("success-msg");
+            const num = Number(inputVal);
+
+            if (inputVal.trim() === "" || isNaN(num) || num <= 10) {
+                errorMsg.style.display = "block";
+                successMsg.style.display = "none";
+            } else {
+                errorMsg.style.display = "none";
+                successMsg.style.display = "block";
+            }
+            return false; 
+        }
+
+        function handleSelectChange() {
+            const selector = document.getElementById("my-select");
+            const displayOutput = document.getElementById("select-result");
+            
+            if (selector.value === "none") {
+                displayOutput.innerHTML = "No custom selection parsed into the record view yet.";
+            } else {
+                displayOutput.innerHTML = "Currently Active Option Selection Value Pointer: [ " + selector.value + " ]";
+            }
+        }
+
+        function transformString() {
+            const strValue = document.getElementById("string-input").value;
+            document.getElementById("string-result").innerHTML = "Output: " + strValue.toUpperCase();
+        }
+
+        function generateRandomNumber() {
+            const randNum = Math.floor(Math.random() * 100) + 1;
+            document.getElementById("math-result").innerHTML = "Resulting Integer: " + randNum;
+        }
+
+        function pushElement() {
+            if(!globalCarsArr.includes("Audi")) {
+                globalCarsArr.push("Audi");
+            }
+            updateArrayView();
+        }
+
+        function popElement() {
+            globalCarsArr.pop();
+            updateArrayView();
+        }
+
+        function updateArrayView() {
+            document.getElementById("array-display").innerHTML = "Current Array: " + JSON.stringify(globalCarsArr);
+        }
+
+        function testTryCatch() {
+            try {
+                executeNonExistentFunction();
+            } catch (err) {
+                document.getElementById("catch-result").innerHTML = "Caught safely! Error Message context: " + err.message;
+            }
+        }
+
+        // Instructor File [source: 1] Implementation
+        function runStandardForLoop() {
+            let text = "";
+            for (let i = 0; i < 5; i++) {
+                text += "The number is " + i + "<br>";
+            }
+            document.getElementById("standard-for-result").innerHTML = text;
+        }
+
+        // Instructor File [source: 3] Implementation
+        function runLoopVariation1() {
+            const cars = ["BMW", "Volvo", "Saab", "Ford"];
+            let i = 2;
+            let len = cars.length;
+            let text = "";
+            for (; i < len; i++) {
+                text += cars[i] + " ";
+            }
+            document.getElementById("loop-var-result").innerHTML = "Omitted Init Result: " + text;
+        }
+
+        // Instructor File [source: 4] Implementation
+        function runLoopVariation2() {
+            const cars = ["BMW", "Volvo", "Saab", "Ford"];
+            let i = 0;
+            let len = cars.length;
+            let text = "";
+            for (; i < len; ) {
+                text += cars[i] + " ";
+                i++;
+            }
+            document.getElementById("loop-var-result").innerHTML = "Omitted Step Result: " + text;
+        }
+
+        // Instructor File [source: 5] Implementation
+        function testVarScope() {
+            var i = 5;
+            for (var i = 0; i < 10; i++) {
+                // Loop cycles
+            }
+            document.getElementById("scope-result").innerHTML = "Var leaked outside loop block scope! Final 'i' value: " + i;
+        }
+
+        // Instructor File [source: 6] Implementation
+        function testLetScope() {
+            let i = 5;
+            for (let i = 0; i < 10; i++) {
+                // Isolated scope block execution
+            }
+            document.getElementById("scope-result").innerHTML = "Let blocked outer leakage! Maintained root 'i' value: " + i;
+        }
+
+        // Instructor File [source: 7] Implementation
+        function runForEachLoop() {
+            const numbers = [45, 4, 9, 16, 25];
+            let txt = "";
+            numbers.forEach(function(value) {
+                txt += "Element Entry Value: " + value + "<br>";
+            });
+            document.getElementById("foreach-result").innerHTML = txt;
+        }
+
+        // Instructor File [source: 8] Implementation
+        function runForOfLoop() {
+            let language = "JavaScript";
+            let text = "";
+            for (let x of language) {
+                text += x + "-";
+            }
+            // Slice off trailing dash for pristine visual rendering
+            document.getElementById("forof-result").innerHTML = text.slice(0, -1);
+        }
+
+        // Instructor File [source: 9] Implementation
+        function parseJSONDemo() {
+            let text = '{"employees":[' +
+            '{"firstName":"John","lastName":"Doe" },' +
+            '{"firstName":"Anna","lastName":"Smith" },' +
+            '{"firstName":"Peter","lastName":"Jones" }]}';
+            
+            const obj = JSON.parse(text);
+            document.getElementById("ref-10").innerHTML = "Employee Record Parsed Match: " + obj.employees[1].firstName + " " + obj.employees[1].lastName;
+        }
+    </script>
+
+</body>
+</html>
