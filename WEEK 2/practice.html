@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Practice</title>
+    <!-- Linking external stylesheet (Day 7 Practice) -->
+    <link rel="stylesheet" href="style.css">
+<style>
+.navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background: #1f3d73;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 18px 40px;
+    font-size: 18px;
+}
+
+.navbar li a:hover {
+    background: #305a9a;
+}
+body{font-family:Arial;background:#f5f5f5;padding:40px}
+h1{text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px}
+button{padding:14px 28px;font-size:16px;cursor:pointer;position:relative;overflow:hidden}
+.b1{border:2px solid #4caf50;background:transparent;color:#4caf50}.b1:before{content:"";position:absolute;left:0;top:0;height:100%;width:0;background:#4caf51;z-index:-1;transition:.4s}.b1:hover:before{width:100%}.b1:hover{color:#fff}
+
+.b2{border:2px solid #2196f3;background:#fff;color:#2196f3;transition:.4s}.b2:hover{background:#2196f3;color:#fff}
+.b3{background:#673ab7;color:#fff;border:none}.b3:before{content:"";position:absolute;left:-120%;top:0;width:60%;height:100%;background:rgba(255,255,255,.5);transform:skewX(-25deg)}.b3:hover:before{left:160%;transition:.8s}
+.b4{border:2px solid #ff9800;background:none;color:#ff9800}.b4:hover{letter-spacing:2px;transition:.4s}
+.b5{background:#e91e63;color:#fff;border:none;transition:.3s}.b5:hover{transform:scale(1.1)}
+.b6{background:#111;color:#0ff;border:2px solid #0ff}.b6:hover{box-shadow:0 0 8px #0ff,0 0 20px #0ff}
+.b7{background:#009688;color:#fff;border:none}.b7:hover{animation:pulse .6s}@keyframes pulse{50%{transform:scale(1.1)}}
+.b8{background:#fff;border:2px solid #f44336;color:#f44336}.b8:hover{background:#f44336;color:#fff;box-shadow:0 0 15px #f44336}
+.b9{background:linear-gradient(90deg,#ff5722,#ffc107);border:none;color:#fff;background-size:200%}.b9:hover{background-position:right}
+.b10{background:#fff;border:2px solid #3f51b5;color:#3f51b5;transition:.5s}.b10:hover{transform:rotateX(360deg);background:#3f51b5;color:#fff}
+</style>
+</head>
+<body>
+    <header class="fixed-banner">
+        Fixed Position Banner - Scrolls with page
+    </header>
+
+    <h1 style="text-align: center; text-decoration: underline; margin-top: 60px;">CSS Practice</h1>
+    
+    <!-- SELECTORS & COLORS -->
+    <div class="topic-section">
+        <h2>Selectors, Colors & Backgrounds</h2>
+        
+        <div class="practice-item">
+            <h3>Basic Selectors & Hex Colors</h3>
+            <p id="unique-para">This paragraph uses an <code>#id</code> selector and a Hex color (#e74c3c).</p>
+            <p class="highlight-text">This paragraph uses a <code>.class</code> selector and an RGB color.</p>
+        </div>
+
+        <div class="practice-item">
+            <h3>Grouping & Descendant Selectors</h3>
+            <div class="grouping-demo">
+                <h4>Heading inside grouping demo</h4>
+                <span>Span inside grouping demo</span>
+            </div>
+            <p class="grouping-demo">Paragraph outside div, but shares the class.</p>
+        </div>
+
+        <div class="practice-item">
+            <h3>Advanced Backgrounds</h3>
+            <div class="bg-gradient-demo">Linear Gradient Background</div>
+            <div class="bg-image-demo">Image Background (Placeholder)</div>
+        </div>
+    </div>
+
+    <!-- THE BOX MODEL -->
+    <div class="topic-section">
+        <h2>The Box Model</h2>
+        
+        <div class="practice-item">
+            <h3>Margin vs Padding</h3>
+            <div class="box padding-box">Padding Box (Space Inside)</div>
+            <div class="box margin-box">Margin Box (Space Outside)</div>
+        </div>
+
+        <div class="practice-item">
+            <h3>Border Styles</h3>
+            <div class="border-demo solid-border">Solid Border</div>
+            <div class="border-demo dashed-border">Dashed Border</div>
+            <div class="border-demo dotted-border">Dotted Border with Radius</div>
+        </div>
+
+        <div class="practice-item">
+            <h3>Box-Sizing</h3>
+            <div class="box-sizing-demo content-box-demo">Content-Box (Width expands)</div>
+            <div class="box-sizing-demo border-box-demo">Border-Box (Width stays fixed)</div>
+        </div>
+    </div>
+
+    <!-- LAYOUT & FLEXBOX -->
+    <div class="topic-section">
+        <h2>Layout Techniques (Flexbox)</h2>
+        
+        <div class="practice-item">
+            <h3>Flex Row with Space-Between</h3>
+            <div class="flex-row-demo">
+                <div class="f-box">1</div>
+                <div class="f-box">2</div>
+                <div class="f-box">3</div>
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <h3>Flex Column with Center Alignment</h3>
+            <div class="flex-col-demo">
+                <div class="f-box">Top</div>
+                <div class="f-box">Middle</div>
+                <div class="f-box">Bottom</div>
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <h3>Flex Wrap</h3>
+            <div class="flex-wrap-demo">
+                <div class="f-box">A</div>
+                <div class="f-box">B</div>
+                <div class="f-box">C</div>
+                <div class="f-box">D</div>
+                <div class="f-box">E</div>
+            </div>
+        </div>
+    </div>
+
+    <!--POSITIONING -->
+    <div class="topic-section">
+        <h2>Positioning</h2>
+        
+        <div class="practice-item">
+            <h3>Relative & Absolute Combo</h3>
+            <div class="relative-container">
+                Relative Container
+                <div class="absolute-child top-right">Top Right</div>
+                <div class="absolute-child bottom-left">Bottom Left</div>
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <h3>Sticky Positioning</h3>
+            <div class="scroll-container">
+                <div class="sticky-element">Sticky Header</div>
+                <p>Scroll down to see the sticky effect.</p>
+                <p>More content...</p>
+                <p>Even more content...</p>
+                <p>Keep scrolling...</p>
+            </div>
+        </div>
+    </div>
+
+    <!--RESPONSIVE DESIGN -->
+    <div class="topic-section responsive-section">
+        <h2>Responsive Design (Media Queries)</h2>
+        <p>Resize the browser window to see these effects.</p>
+        
+        <div class="practice-item">
+            <h3>Color Change on Mobile</h3>
+            <div class="responsive-color-box">
+                My background is blue on desktop, but turns green on screens smaller than 600px.
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <h3>Layout Change on Mobile</h3>
+            <div class="responsive-layout">
+                <div class="r-item">Left Column</div>
+                <div class="r-item">Right Column</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--NAVIGATION BAR -->
+    <div class="topic-section responsive-section">
+        <h2>Navigation Bar</h2>
+            <div class="practice-item">
+            
+
+
+<ul class="navbar">
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#">About</a></li>
+
+<li><a href="#">Gallery</a></li>
+
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+                    </div>
+
+    </div>
+
+    <!--NAVIGATION BAR -->
+    <div class="topic-section responsive-section">
+        
+        <h2>CSS Animated Buttons</h1>
+ <div class="practice-item">
+<div class="grid">
+<button class="b1">Slide Fill</button>
+<button class="b2">Fill Hover</button>
+<button class="b3">Shine Sweep</button>
+<button class="b4">Border Expand</button>
+<button class="b5">Scale Hover</button>
+<button class="b6">Neon Glow</button>
+<button class="b7">Pulse</button>
+<button class="b8">Glow Fill</button>
+<button class="b9">Gradient Move</button>
+<button class="b10">Flip Rotate</button>
+
+                    </div>
+
+    </div>
+   
+<hr>
+
+    <!-- ADDITIONAL CSS PRACTICES (INLINE IFRAMES) -->
+    <div class="topic-section">
+        <h2>Additional Examples (Loaded Inline)</h2>
+        <p>All instructor examples are loaded below so you don't have to leave this page.</p>
+        
+        <div id="iframe-gallery" style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <div style="border: 1px solid #ccc; padding: 10px; background-color: #fff;">
+        <h4 style="margin: 0 0 10px 0;">style.html</h4>
+        <iframe srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+
+&lt;h1 style=&quot;background-color:powderblue;&quot;&gt;This is a heading&lt;/h1&gt;
+&lt;p style=&quot;background-color:tomato;&quot;&gt;This is a paragraph.&lt;/p&gt;
+&lt;br&gt;
+
+&lt;p&gt;south central  railway&lt;/p&gt;
+&lt;p style=&quot;color:red;&quot;&gt;red&lt;/p&gt;
+&lt;h1 style=&quot;color:blue;&quot;&gt;blue&lt;/h1&gt;
+&lt;p style=&quot;font-size:100px;&quot;&gt;big&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+" width="400" height="300" style="border: 1px solid #eee;"></iframe>
+    </div>
+    <div style="border: 1px solid #ccc; padding: 10px; background-color: #fff;">
+        <h4 style="margin: 0 0 10px 0;">style1.html</h4>
+        <iframe srcdoc="&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1 style=&quot;color:blue;&quot;&gt;This is a heading&lt;/h1&gt;
+&lt;p style=&quot;color:red;&quot;&gt;This is a paragraph.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 style=&quot;font-size:300%;&quot;&gt;This is a heading&lt;/h1&gt;
+&lt;p style=&quot;font-size:160%;&quot;&gt;This is a paragraph.&lt;/p&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;h1 style=&quot;text-align:center;&quot;&gt;Centered Heading&lt;/h1&gt;
+&lt;p style=&quot;text-align:center;&quot;&gt;Centered paragraph.&lt;/p&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+" width="400" height="300" style="border: 1px solid #eee;"></iframe>
+    </div>
+    <div style="border: 1px solid #ccc; padding: 10px; background-color: #fff;">
+        <h4 style="margin: 0 0 10px 0;">colours.html</h4>
+        <iframe srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+
+
+&lt;h1 style=&quot;background-color:rgb(105, 90, 61);&quot;&gt;SCRWWO&lt;/h1&gt;
+&lt;h1 style=&quot;background-color:#ff6347;&quot;&gt;SCRWWO&lt;/h1&gt;
+&lt;h1 style=&quot;background-color:hsl(9, 100%, 64%);&quot;&gt;SCRWWO&lt;/h1&gt;
+
+&lt;h1 style=&quot;background-color:rgba(255, 99, 71, 0.5);&quot;&gt;SCRWWO&lt;/h1&gt;
+&lt;h1 style=&quot;background-color:hsla(9, 100%, 64%, 0.5);&quot;&gt;SCRWWO&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;" width="400" height="300" style="border: 1px solid #eee;"></iframe>
+    </div>
+    <div style="border: 1px solid #ccc; padding: 10px; background-color: #fff;">
+        <h4 style="margin: 0 0 10px 0;">blockandinline.html</h4>
+        <iframe srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p style=&quot;border: 5px solid black&quot;&gt;Hello World&lt;/p&gt;
+&lt;div style=&quot;border: 1px solid black&quot;&gt;Hello World&lt;/div&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;WWF&#039;s goal is to: &lt;q&gt;Build a future where people live in harmony with nature.&lt;/q&gt;&lt;/p&gt; 
+&lt;br&gt;
+&lt;br&gt;
+&lt;blockquote cite=&quot;http://www.worldwildlife.org/who/index.html&quot;&gt;
+For 50 years, WWF has been protecting the future of nature.
+The world&#039;s leading conservation organization,
+WWF works in 100 countries and is supported by
+1.2 million members in the United States and
+close to 5 million globally.
+&lt;/blockquote&gt; 
+
+&lt;br&gt;&lt;br&gt;
+
+p&gt;The &lt;abbr title=&quot;World Health Organization&quot;&gt;WHO&lt;/abbr&gt; was founded in 1948.&lt;/p&gt; 
+&lt;br&gt;&lt;br&gt;
+
+&lt;p&gt;The P and the DIV elements are both block elements, and they will always start on a new line and take up the full width available (stretches out to the left and right as far as it can).&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+" width="400" height="300" style="border: 1px solid #eee;"></iframe>
+    </div>
+    <div style="border: 1px solid #ccc; padding: 10px; background-color: #fff;">
+        <h4 style="margin: 0 0 10px 0;">blockandinline1.html</h4>
+        <iframe srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;p&gt;This is an inline span &lt;span style=&quot;border: 1px solid black&quot;&gt;Hello World&lt;/span&gt; element inside a paragraph.&lt;/p&gt;
+&lt;p&gt;The SPAN element is an inline element, and will not start on a new line and only takes up as much width as necessary.&lt;/p&gt;
+&lt;b&gt;scrwwo&lt;/b&gt;&lt;br&gt;
+&lt;i&gt;scrwwo&lt;/i&gt;&lt;br&gt;
+&lt;u&gt;scrwwo&lt;/u&gt;&lt;br&gt;
+x&lt;sub&gt;2&lt;/sub&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+x&lt;sup&gt;2&lt;/sup&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+" width="400" height="300" style="border: 1px solid #eee;"></iframe>
+    </div>
+</div>
+
+
+</body>
+</html>

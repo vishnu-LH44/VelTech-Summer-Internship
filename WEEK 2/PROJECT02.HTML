@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intern Onboarding Portal - SCR</title>
+    <style>
+        /* =========================================================================
+           1. CORE VARIABLES & GLOBAL RESET
+           ========================================================================= */
+        :root {
+            --scr-navy: #0f2c59;       /* Official Indian Railways Navy Blue */
+            --scr-gold: #ffcc00;       /* Railways Yellow/Gold Accent */
+            --bg-light: #f3f6f9;       /* Light grey background for readability */
+            --text-dark: #2d3748;      /* Soft off-black text color */
+            --white: #ffffff;
+            --border-color: #cbd5e1;   /* Soft slate gray borders */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* =========================================================================
+           2. MAIN CONTAINER & WORKSPACE STYLING
+           ========================================================================= */
+        .portal-wrapper {
+            width: 100%;
+            max-width: 800px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-top: 6px solid var(--scr-navy);
+            overflow: hidden;
+        }
+
+        /* Header layout & presentation */
+        .portal-header {
+            background-color: var(--scr-navy);
+            color: var(--white);
+            padding: 30px;
+            text-align: center;
+            border-bottom: 4px solid var(--scr-gold);
+        }
+
+        .portal-header h2 {
+            font-size: 22px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .portal-header h3 {
+            font-size: 16px;
+            color: var(--scr-gold);
+            margin-top: 8px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            width: 100px;
+            height: 3px;
+            background-color: var(--scr-gold);
+            margin: 15px auto 0 auto;
+            border: none;
+        }
+
+        /* Form Wrapper Padding */
+        .form-content {
+            padding: 35px;
+        }
+
+        /* =========================================================================
+           3. FIELDSET & LEGEND CUSTOM STYLES (THE BOX MODEL)
+           ========================================================================= */
+        fieldset {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            background-color: #fafbfc;
+        }
+
+        legend {
+            font-size: 14px;
+            color: var(--scr-navy);
+            padding: 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Cleaning up layout tables inside the form fields */
+        fieldset table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        fieldset td {
+            padding: 10px 5px;
+            vertical-align: middle;
+        }
+
+        /* Left-hand column labels */
+        fieldset td:first-child {
+            width: 25%;
+            font-weight: 600;
+            font-size: 13px;
+            color: #4a5568;
+        }
+
+        /* =========================================================================
+           4. FORM INPUTS & INTERACTIVE HOVER STATES
+           ========================================================================= */
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 14px;
+            color: var(--text-dark);
+            background-color: var(--white);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        /* Highlight inputs on active focus */
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--scr-navy);
+            box-shadow: 0 0 0 3px rgba(15, 44, 89, 0.1);
+        }
+
+        /* Custom alignment for file and text area inputs */
+        input[type="file"] {
+            font-size: 13px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Group alignment for checkboxes & radio buttons */
+        .selection-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        /* =========================================================================
+           5. ACTION BUTTONS & FOOTER SUBMISSIONS
+           ========================================================================= */
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        input[type="submit"] {
+            background-color: var(--scr-navy);
+            color: var(--white);
+            border: none;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1a427a;
+        }
+
+        input[type="submit"]:active,
+        input[type="reset"]:active {
+            transform: scale(0.97);
+        }
+
+        input[type="reset"] {
+            background-color: #e2e8f0;
+            color: #4a5568;
+            border: 1px solid #cbd5e1;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #cbd5e1;
+        }
+
+        /* =========================================================================
+           6. RESPONSIVE MEDIA QUERIES
+           ========================================================================= */
+        @media screen and (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            .form-content {
+                padding: 20px;
+            }
+
+            fieldset td:first-child {
+                width: 100%;
+                display: block;
+                padding-bottom: 4px;
+            }
+
+            fieldset td {
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portal-wrapper">
+        <header class="portal-header">
+            <h2>South Central Railway WWO - Vijayawada Division</h2>
+            <h3>Intern Registration Form</h3>
+            <hr class="divider">
+        </header>
+
+        <div class="form-content">
+            <form action="/submit_registration" method="POST">
+                
+                <fieldset>
+                    <legend><strong>Personal Information</strong></legend>
+                    <table>
+                        <tr>
+                            <td><label for="fname">Full Name:</label></td>
+                            <td><input type="text" id="fname" name="fname" required placeholder="Enter your full name"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="dob">Date of Birth:</label></td>
+                            <td><input type="date" id="dob" name="dob"></td>
+                        </tr>
+                        <tr>
+                            <td>Gender:</td>
+                            <td>
+                                <div class="selection-group">
+                                    <label for="g_male"><input type="radio" name="gender" value="male" id="g_male"> Male</label>
+                                    <label for="g_female"><input type="radio" name="gender" value="female" id="g_female"> Female</label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+                <fieldset>
+                    <legend><strong>Internship Details</strong></legend>
+                    <table>
+                        <tr>
+                            <td><label for="dept">Department:</label></td>
+                            <td>
+                                <select id="dept" name="dept">
+                                    <option value="it">Information Technology (CSE)</option>
+                                    <option value="electrical">Electrical Loco Shed (ECE/MECH/CIVIL)</option>
+                                    <option value="operations">Operations & Management (ECE)</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">Skills:</td>
+                            <td>
+                                <div class="checkbox-container">
+                                    <label><input type="checkbox" name="skills" value="web"> Web Development</label>
+                                    <label><input type="checkbox" name="skills" value="db"> Database Management (JDBC)</label>
+                                    <label><input type="checkbox" name="skills" value="networking"> Networking</label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+                <fieldset>
+                    <legend><strong>Documentation</strong></legend>
+                    <table>
+                        <tr>
+                            <td><label for="resume">Upload Resume:</label></td>
+                            <td><input type="file" id="resume" name="resume" accept=".pdf"></td>
+                        </tr>
+                        <tr>
+                            <td valign="top"><label for="cover_letter">Statement of Purpose:</label></td>
+                            <td><textarea id="cover_letter" name="cover_letter" rows="5" placeholder="Write a brief statement about your training objectives..."></textarea></td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+                <div class="button-group">
+                    <input type="hidden" name="form_id" value="intern_reg_2026">
+                    <input type="submit" value="Submit Registration">
+                    <input type="reset" value="Clear Form">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
